@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap">
+  <title>Geography Project</title>
+</head>
+<body>
+  <div id="app">
+    <div class="currency-container">
+      <div class="marketing-currency">
+        There is currently {{ format(player.money) }} carbon in the atmosphere
+      </div>
+      <div class="artist-currency">
+        There are currently {{ format(player.graphics) }} life forms on earth
+      </div>
+      <div class="lootboxTeam-currency">
+        The primary life forms have {{ format(player.elec) }} energy. This is a x{{ format(player.elec) }} multiplier on all production
+      </div>
+    </div>
+    <div class="producers-container">
+      <div class="generators-container">
+        <div
+        class="generator marketing-generator"
+        :class="{ 'generator--unavailable': !generator.canBuy}"
+        v-for="generator in player.marketing">
+          <generator :generator="generator"/>
+        </div>
+        <add-generator-button target="marketing"/>
+      </div>
+      <div class="generators-container">
+        <div 
+        class="generator artist-generator" 
+        :class="{ 'generator--unavailable': !generator.canBuy}"
+        v-for="generator in player.artists">
+          <generator :generator="generator"/>
+        </div>
+        <add-generator-button target="artists"/>
+      </div>
+      <div class="generators-container">
+        <div 
+        class="generator lootboxTeam-generator" 
+        :class="{ 'generator--unavailable': !generator.canBuy}"
+        v-for="generator in player.lootboxTeam">
+          <generator :generator="generator"/>
+        </div>
+        <add-generator-button target="lootboxTeam"/>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="js/vue.js"></script>
+
+<script src="js/generator.js"></script>
+
+<script src="js/components/generator.js"></script>
+<script src="js/components/add-generator-button.js"></script>
+
+<script src="js/player.js"></script>
+<script src="js/format.js"></script>
+<script src="js/loop.js"></script>
+<script src="js/format.js"></script>
+<script src="js/index.js"></script>
+
+</html>
