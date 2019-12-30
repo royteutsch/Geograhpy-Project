@@ -26,7 +26,7 @@ Vue.component('add-generator-button', {
     :class="{ 'add-generator-button--unavailable': !canBuy}"
     @click="addGenerator()">
     <h1>+</h1>
-    <div>One more tier, costs {{ format(tierCost()) }} graphics</div>
+    <div>One more tier, costs {{ format(tierCost()) }} life forms</div>
   </div>
   `
 })
