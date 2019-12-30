@@ -43,20 +43,20 @@ function getColumn(type) {
   }
 }
 
-const marketing_names = ["Natural Fire", ""]
-const artist_names = ["Deviantart Artist"]
-const lootboxTeam_names = ["Valve Interns"]
+const marketing_names = ["Volcano Mk."]
+const artist_names = ["Life Mk."]
+const lootboxTeam_names = ["Energy Mk."]
 
 function generateGeneratorName(tier, type) {
   switch (type) {
     case "marketing":
-    return marketing_names[tier%marketing_names.length];
+    return (marketing_names[tier%marketing_names.length] + (tier+1));
 
     case "artists":
-    return artist_names[tier%artist_names.length];
+    return (artist_names[tier%artist_names.length] +(tier+1));
 
     case "lootboxTeam":
-    return lootboxTeam_names[tier%lootboxTeam_names.length];
+    return (lootboxTeam_names[tier%lootboxTeam_names.length] + (tier+1));
   }
 }
 
